@@ -1,13 +1,13 @@
-
+"use strict";
 const daysEl = document.getElementById('days');
 const hoursEl = document.getElementById('hours');
 const minsEl = document.getElementById('minutes');
 const secondsEl = document.getElementById('seconds');
 
-const christmas = "25 Dec 2020"; // change this line for countdown to other date
+const CHRISTMAS_DAY = "25 Dec 2020"; // change this line for countdown to other date
 
 function countdown() {
-    const christmasDate = new Date(christmas);
+    const christmasDate = new Date(CHRISTMAS_DAY);
     const currentDate = new Date();
 
     const totalSeconds = (christmasDate - currentDate) / 1000;
@@ -22,7 +22,7 @@ function countdown() {
     minsEl.innerHTML = formatTime(minutes);
     secondsEl.innerHTML = formatTime(seconds);
 
-    console.log(days, hours, minutes, seconds);
+    // console.log(days, hours, minutes, seconds);
 }
 // setting up an initial call
 countdown();
