@@ -28,7 +28,7 @@
  LIVE DEMO: NO <br/>
  DESIGN: https://uidesigndaily.com/posts/sketch-questionnaire-choice-submit-day-924 <br/>
  END RESULT:
- ![Getting Started](project-images/quiz-app.png)
+ ![Getting Started](project-images/Quiz-app.png)
 
  APP NAME: Todo App + Local Storage<br/>
  CATEGORY:  Frontend Software Engineering <br/>
