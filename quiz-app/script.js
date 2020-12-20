@@ -1,3 +1,4 @@
+// Some static quiz data
 const quizData = [
     {
         question: 'How old is Rok?',
@@ -38,6 +39,7 @@ question: 'How would you like Premium to help?',
         d: 'To find and hire talent faster.',
         correct:
 */
+// Getting the elements.
 const answersEls = document.querySelectorAll(".answer");
 const questionEl = document.getElementById('question');
 const quiz = document.getElementById("quiz");
@@ -50,8 +52,9 @@ const submitBtn = document.getElementById("submit");
 let currentQuiz = 0;
 let score = 0;
 
-loadQuiz();
-
+/**
+ * Displays questions and possible answers.
+ */
 function loadQuiz() {
     deselectAnswers();
     const currentQuizData = quizData[currentQuiz];
@@ -63,8 +66,12 @@ function loadQuiz() {
     d_text.innerText = currentQuizData.d;
 }
 
-function getSelected() {
+loadQuiz();
 
+/**
+ * Returns selected answer.
+ */
+function getSelected() {
     let answer = undefined;
 
     answersEls.forEach((answerEl) => {
@@ -75,27 +82,48 @@ function getSelected() {
     return answer;
 }
 
+/**
+ * Deselects answers after going to new page.
+ */
 function deselectAnswers() {
     answersEls.forEach((answerEl) => {
         answerEl.checked = false;
     });
 }
 
+/**
+ * Logs the selected answers.
+ */
 submitBtn.addEventListener('click', () => {
     const answer = getSelected();
 
     console.log(answer);
     if(answer) {
-        if (answer === quizData[currentQuiz].correct) {
-            score++;
-        }
+        checkAnswer(answer);
         currentQuiz++;
-        if(currentQuiz < quizData.length) {
-            loadQuiz();
-        } else {
-            quiz.innerHTML = `
-            <h2> You answered correctly ${score}/${quizData.length} questions. </h2> 
-            <button onclick = "location.reload()">Reload</button>`;
-        }
+        displayResult();
     } 
 })
+
+/**
+ * Checks if an answer is correct.
+ * @param {number} inputAnswer 
+ */
+function checkAnswer(inputAnswer) {
+    if (inputAnswer === quizData[currentQuiz].correct) {
+        score++;
+    }
+}
+
+/**
+ * Displays the quiz score at the end.
+ */
+function displayResult() {
+    if(currentQuiz < quizData.length) {
+        loadQuiz();
+    } else {
+        quiz.innerHTML = `
+        <h2> You answered correctly ${score}/${quizData.length} questions. </h2> 
+        <button onclick = "location.reload()">Reload</button>`;
+    }
+}

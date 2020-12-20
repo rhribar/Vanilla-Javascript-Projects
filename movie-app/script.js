@@ -6,15 +6,23 @@ const SEARCHAPI =
 
 getMovies(APIURL);
 
+/**
+ * Fetches movies from the API.
+ * @param {hyper-text} url 
+ */
 async function getMovies(url) {
     const resp = await fetch(url);
     const respData = await resp.json();
-
+    
     console.log(respData);
 
     showMovies(respData.results);
 }
 
+/**
+ * Displays movies.
+ * @param {array} movies 
+ */
 function showMovies(movies) {
     // clear main
     main.innerHTML = "";
@@ -46,6 +54,10 @@ function showMovies(movies) {
     });
 }
 
+/**
+ * Color number based on votes.
+ * @param {number} vote 
+ */
 function getClassByRate(vote) {
     if (vote >= 8) {
         return "green";
@@ -56,14 +68,15 @@ function getClassByRate(vote) {
     }
 }
 
+/**
+ * Searches based on query.
+ */
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-
     const searchTerm = search.value;
 
     if (searchTerm) {
         getMovies(SEARCHAPI + searchTerm);
-
         search.value = "";
     }
 });

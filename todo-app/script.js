@@ -11,6 +11,9 @@ if(todos) {
     })
 }
 
+/**
+ * Adding todo on submit.
+ */
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // overrides  default event which is refreshing the page
 
@@ -18,7 +21,7 @@ form.addEventListener('submit', (e) => {
 })
 
 /**
- * @descripton Function for adding a todo.
+ * Adding a todo. Not proud of this one. TODO: Break up this method to smaller reusable functions. :D
  * @param todo
  */
 function addTodo(todo = {}) {
@@ -36,31 +39,43 @@ function addTodo(todo = {}) {
         }
 
         todoEl.innerText = todoText;
-        
-        // left click event handler to mark todo as completed
-        todoEl.addEventListener('click', () => {
-            todoEl.classList.toggle('completed');
-            updateLS();
-        });
 
-        // right click event handler to remove todo
-        todoEl.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-            
-            todoEl.remove();
-            updateLS();
-        })
+        completeTodo(todoEl);
+        removeTodo(todoEl);
 
-        todosUL.appendChild(todoEl);
-
-        input.value = '';
-
+        todosUL.appendChild(todoEl); // add new todos to list
+        input.value = ''; // clear input
         updateLS();
     }
 }
+
 /**
- * Function for updating local storage.
- * 
+ * Complete todo on left click.
+ * @param {list} todoEl 
+ */
+function completeTodo(todoEl) {
+    todoEl.addEventListener('click', () => {
+        todoEl.classList.toggle('completed');
+        updateLS();
+    });
+}
+
+/**
+ * Remove todo on right click.
+ * @param {list} todoEl 
+ */
+function removeTodo(todoEl) {
+    todoEl.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        
+        todoEl.remove();
+        updateLS();
+    })
+    console.log(todoEl);
+}
+
+/**
+ * Update local storage.
  */
 function updateLS() {
     const todosEl = document.querySelectorAll('li');
@@ -70,7 +85,7 @@ function updateLS() {
     todosEl.forEach(todoEl => {
         todos.push ({
             text: todoEl.innerText,
-            completed:todoEl.classList.contains("completed"),
+            completed: todoEl.classList.contains("completed"),
         })
     })
     localStorage.setItem("todos", JSON.stringify(todos));
