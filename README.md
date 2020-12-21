@@ -1,3 +1,12 @@
+ APP NAME: Music App<br/>
+ CATEGORY:  Frontend Software Engineering <br/>
+ TECHNOLOGICAL STACK: Vanilla Javascript + API<br/>
+ LIVE DEMO: NO <br/>
+ DESIGN: INSPIRED BY DEV ED (below) <br/>
+ END RESULT (GOAL):
+ ![Getting Started](project-images/Music-app.png)
+ 
+ 
  APP NAME: Countdown Timer To Christmas<br/>
  CATEGORY:  Frontend Software Engineering <br/>
  TECHNOLOGICAL STACK: Vanilla Javascript + Date<br/>

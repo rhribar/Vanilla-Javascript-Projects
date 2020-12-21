@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.song-container {
+    font-family: "Lato", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+img {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 50%;
+}
+
+input {
+    border-radius: 25px;
+    font-size: 1rem;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    padding: 0.5rem;
+}
+
+#title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333333;
+}
+
+#name {
+  padding-top: 10px;
+  color: #646464;
+  font-weight: 400;
+  padding-bottom: 40px;
+}
+
+.search input[type="text"] {
+  background: url(search-white.png) no-repeat 10px 6px #fcfcfc;
+  border: 1px solid #d1d1d1;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #3a3838;
+  width: 200px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+  }
+
+.search input[type="text"]:focus {
+  outline : none;
+}
+
+button {
+  border: 1px solid #d1d1d1;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #3a3838;
+  width: 50px;
+  height: 20px;
+  border-radius: 20px;
+  cursor: pointer
+}
+
+
+@-webkit-keyframes rotate {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  
+@keyframes rotate {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+}
+  
+.rotateSong {
+    animation-play-state: running;
+    -webkit-animation: rotate 20s linear forwards infinite;
+        animation: rotate 20s linear forwards infinite;
+}
