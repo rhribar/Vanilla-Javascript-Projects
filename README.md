@@ -4,7 +4,7 @@
  LIVE DEMO: NO <br/>
  DESIGN: INSPIRED BY DEV ED <br/>
  END RESULT:
- ![Getting Started](project-images/Music-app2.png)
+ ![Getting Started](project-images/Music-app3.png)
  
  
  APP NAME: Countdown Timer To Christmas<br/>
