@@ -8,6 +8,7 @@
     <title>Music App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="Slider.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -16,25 +17,13 @@
             <input type="text" id="search-input" placeholder="Search your music" autocomplete="off">
         </form>
         <div id="img_album" class="rotateSong" ></div>
-        
-
         <p id="title"></p>
         <p id="name"></p>
-        <p id="timer">0:00</p>
-        <!-- <div class="player">
-            <div class="time-control">
-                <div id="trackId" class="track">
-                    <input id="slider" type="range" max="100" min="0" value="0" step="1">
-                    <div class="animate-track"></div>
-                </div>
-            </div>
-        </div> -->
-        <!-- <div>
-            <button id="goBack">&lt</button>
-            <button id="play">Play</button>
-            <button id="goForward">&gt</button>
-            <button id="mute">Mute</button>
-        </div> -->
+        <!-- <div class="time-control"> -->
+            <p id="timer">0:00</p>
+            <div id="slider"></div>
+        <!-- </div> -->
+        
         <div id=buttons>
             <svg id="goBack" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-left" class="svg-inline--fa fa-angle-left fa-w-8 fa-2x skip-back" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg>
             <svg id="play" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" class="svg-inline--fa fa-play fa-w-14 fa play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg>
